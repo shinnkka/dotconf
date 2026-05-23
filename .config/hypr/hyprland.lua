@@ -1,5 +1,5 @@
-local colors = require("noctalia.noctalia-colors")
-
+require("noctalia.noctalia-colors")
+require("noctalia.bind")
 ------------------
 ---- MONITORS ----
 ------------------
@@ -19,7 +19,6 @@ hl.monitor({
 
 local terminal = "kitty"
 local fileManager = "thunar"
-local ipc = "qs -c noctalia-shell ipc call"
 
 local mainMod = "SUPER"
 
@@ -30,7 +29,6 @@ local mainMod = "SUPER"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	hl.exec_cmd("qs -c noctalia-shell --no-duplicate")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("fcitx5")
 	--	hl.exec_cmd("hypridle")
@@ -196,21 +194,11 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
-hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(ipc .. " controlCenter toggle"))
-hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(ipc .. " settings toggle"))
-
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
-
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
-
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. " notifications toggleHistory"))
-
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(ipc .. " notifications clear"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
@@ -223,8 +211,6 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + Z", hl.dsp.window.fullscreen({ mode = 0 }))
 
 hl.bind(mainMod .. " + X", hl.dsp.window.fullscreen({ mode = 1 }))
-
-hl.bind("ALT + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
 
 hl.bind("Print", hl.dsp.exec_cmd("grimblast -f -n copysave area"))
 
@@ -257,18 +243,6 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -------------------------
 ---- MEDIA HOTKEYS ----
 -------------------------
-
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"), { locked = true, repeating = true })
-
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume decrease"), { locked = true, repeating = true })
-
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked = true })
-
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. " volume muteInput"), { locked = true })
-
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness increase"), { locked = true, repeating = true })
-
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness decrease"), { locked = true, repeating = true })
 
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("kcalc"))
 
@@ -387,15 +361,3 @@ hl.window_rule({
 -------------------
 ---- LAYERRULE ----
 -------------------
-
-hl.layer_rule({
-	name = "noctalia",
-
-	match = {
-		namespace = "noctalia-background-.*$",
-	},
-
-	ignore_alpha = 0.5,
-	blur = true,
-	blur_popups = true,
-})
