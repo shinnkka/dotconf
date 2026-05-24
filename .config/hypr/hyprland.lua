@@ -1,6 +1,6 @@
 require("noctalia.noctalia-colors")
 require("noctalia.bind")
-require("sub.desktop")
+require("sub.laptop")
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -20,7 +20,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("fcitx5")
-	--	hl.exec_cmd("hypridle")
 	hl.exec_cmd("kdeconnect-indicator")
 end)
 
@@ -193,9 +192,6 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-
---hl.bind(mainMod .. " + L",
---    hl.dsp.exec_cmd("loginctl lock-session"))
 
 hl.bind(mainMod .. " + Z", hl.dsp.window.fullscreen({ mode = 0 }))
 
