@@ -184,7 +184,8 @@
                         "chrome_status_icon_1",
                         "微信",
                         "键盘 - 英语（美国）",
-                        "Telegram Desktop"
+                        "Telegram Desktop",
+                        "nm-applet"
                     ]
                 },
                 {
@@ -633,7 +634,7 @@
         "diskAvailWarningThreshold": 20,
         "diskCriticalThreshold": 90,
         "diskWarningThreshold": 80,
-        "enableDgpuMonitoring": true,
+        "enableDgpuMonitoring": false,
         "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 90,
         "gpuWarningThreshold": 80,

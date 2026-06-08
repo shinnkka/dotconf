@@ -1,7 +1,7 @@
 require("noctalia.noctalia-colors")
 require("noctalia.bind")
 require("sub.laptop")
-
+require("plugins.hymission")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -20,6 +20,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("fcitx5")
+	hl.exec_cmd("hyprpm reload")
 	hl.exec_cmd("kdeconnect-indicator")
 end)
 
