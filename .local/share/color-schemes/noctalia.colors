@@ -124,7 +124,7 @@ ForegroundPositive=158,206,106
 ForegroundVisited=223,208,251
 
 [Colors:Window]
-BackgroundAlternate=0,61,190
+BackgroundAlternate=0,61,191
 BackgroundNormal=36,40,59
 DecorationFocus=122,162,247
 DecorationHover=122,162,247
@@ -138,7 +138,7 @@ ForegroundPositive=158,206,106
 ForegroundVisited=223,208,251
 
 [WM]
-activeBackground=0,61,190
+activeBackground=0,61,191
 activeBlend=207,221,252
 activeForeground=207,221,252
 inactiveBackground=26,27,38

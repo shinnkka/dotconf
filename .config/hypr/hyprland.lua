@@ -1,4 +1,3 @@
-require("noctalia.noctalia-colors")
 require("noctalia.bind")
 require("sub.laptop")
 require("plugins.hymission")
@@ -51,7 +50,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 15,
+		rounding = 20,
 		rounding_power = 2,
 
 		active_opacity = 0.9,
@@ -61,7 +60,7 @@ hl.config({
 			enabled = true,
 			range = 4,
 			render_power = 3,
-			color = "rgba(1a1a1aee)",
+			color = "0xee1a1a1a",
 		},
 
 		blur = {
@@ -347,3 +346,6 @@ hl.window_rule({
 -------------------
 ---- LAYERRULE ----
 -------------------
+
+-- For Noctalia Color templates
+require("noctalia")

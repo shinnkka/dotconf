@@ -19,10 +19,6 @@ hl.monitor({
 	vrr = 3,
 })
 
-hl.on("hyprland.start", function()
-	hl.exec_cmd("hypridle")
-end)
-
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
