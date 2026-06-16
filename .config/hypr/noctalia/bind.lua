@@ -2,7 +2,7 @@ local ipc = "noctalia msg"
 local mainMod = "SUPER"
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("noctalia")
+	hl.exec_cmd("uwsm app -- noctalia")
 end)
 
 hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))

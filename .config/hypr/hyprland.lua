@@ -7,7 +7,7 @@ require("plugins.hymission")
 
 local terminal = "kitty"
 local fileManager = "thunar"
-
+local run = "uwsm app -- "
 local mainMod = "SUPER"
 
 -------------------
@@ -17,24 +17,8 @@ local mainMod = "SUPER"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	hl.exec_cmd("systemctl --user start hyprpolkitagent")
-	hl.exec_cmd("fcitx5")
 	hl.exec_cmd("hyprpm reload")
-	hl.exec_cmd("kdeconnect-indicator")
 end)
-
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "Breeze")
-hl.env("XCURSOR_THEME", "Breeze")
-hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-hl.env("GRIMBLAST_EDITOR", "swappy -f")
-hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
-hl.env("XDG_MENU_PREFIX", "arch-")
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -182,9 +166,9 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run .. terminal))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run .. fileManager))
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(run .. "firefox"))
 
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
@@ -197,9 +181,9 @@ hl.bind(mainMod .. " + Z", hl.dsp.window.fullscreen({ mode = 0 }))
 
 hl.bind(mainMod .. " + X", hl.dsp.window.fullscreen({ mode = 1 }))
 
-hl.bind("Print", hl.dsp.exec_cmd("grimblast -f -n copysave area"))
+hl.bind("Print", hl.dsp.exec_cmd(run .. "grimblast -f -n copysave area"))
 
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grimblast -f -n edit area"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd(run .. "grimblast -f -n edit area"))
 
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 
@@ -229,19 +213,19 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 ---- MEDIA HOTKEYS ----
 -------------------------
 
-hl.bind("XF86Calculator", hl.dsp.exec_cmd("kcalc"))
+hl.bind("XF86Calculator", hl.dsp.exec_cmd(run .. "kcalc"))
 
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(run .. "playerctl next"), { locked = true })
 
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd(run .. "playerctl play-pause"), { locked = true })
 
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(run .. "playerctl play-pause"), { locked = true })
 
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(run .. "playerctl previous"), { locked = true })
 
-hl.bind("xf86KbdBrightnessUp", hl.dsp.exec_cmd("brightnessctl -d '*::kbd_backlight' set +50%"))
+hl.bind("xf86KbdBrightnessUp", hl.dsp.exec_cmd(run .. "brightnessctl -d '*::kbd_backlight' set +50%"))
 
-hl.bind("xf86KbdBrightnessDown", hl.dsp.exec_cmd("brightnessctl -d '*::kbd_backlight' set 50%-"))
+hl.bind("xf86KbdBrightnessDown", hl.dsp.exec_cmd(run .. "brightnessctl -d '*::kbd_backlight' set 50%-"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
