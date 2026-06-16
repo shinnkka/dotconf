@@ -4,8 +4,8 @@
         "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
         "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
-        "customLaunchPrefix": "",
-        "customLaunchPrefixEnabled": false,
+        "customLaunchPrefix": "uwsm app --",
+        "customLaunchPrefixEnabled": true,
         "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
@@ -583,21 +583,21 @@
             },
             {
                 "action": "logout",
-                "command": "systemctl --user stop hyprpolkitagent.service && hyprshutdown",
+                "command": "hyprshutdown",
                 "countdownEnabled": false,
                 "enabled": true,
                 "keybind": "3"
             },
             {
                 "action": "reboot",
-                "command": "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'",
+                "command": "hyprshutdown -t '正在重启...' --post-cmd 'reboot'",
                 "countdownEnabled": false,
                 "enabled": true,
                 "keybind": "4"
             },
             {
                 "action": "shutdown",
-                "command": "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'",
+                "command": "hyprshutdown -t '正在关机...' --post-cmd 'shutdown -P 0'",
                 "countdownEnabled": false,
                 "enabled": true,
                 "keybind": "5"
