@@ -84,6 +84,52 @@ telemetry_enabled = true
     [shell.screen_corners]
     enabled = true
 
+    [[shell.session.actions]]
+    action = "lock"
+    enabled = false
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "command"
+    command = "systemctl suspend"
+    enabled = true
+    glyph = "suspend"
+    label = "挂起"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "command"
+    command = "systemctl hibernate"
+    enabled = true
+    glyph = "zzz"
+    label = "休眠"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    command = "hyprshutdown -t '正在关机...' --post-cmd 'shutdown -P 0'"
+    enabled = true
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    command = "hyprshutdown -t '正在重启...' --post-cmd 'reboot'"
+    enabled = true
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    command = "hyprshutdown"
+    enabled = true
+    variant = "default"
+
 [theme]
 builtin = "Tokyo-Night"
 
