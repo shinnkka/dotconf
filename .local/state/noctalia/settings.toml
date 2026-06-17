@@ -116,7 +116,7 @@ telemetry_enabled = true
     action = "shutdown"
     command = "hyprshutdown -t '正在关机...' --post-cmd 'shutdown -P 0'"
     enabled = true
-    variant = "destructive"
+    variant = "default"
 
     [[shell.session.actions]]
     action = "reboot"
