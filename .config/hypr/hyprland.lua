@@ -21,19 +21,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpm reload")
 end)
 
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
--- hl.env("XCURSOR_SIZE", "24")
--- hl.env("HYPRCURSOR_SIZE", "24")
--- hl.env("HYPRCURSOR_THEME", "Breeze")
--- hl.env("XCURSOR_THEME", "Breeze")
--- hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
--- hl.env("GRIMBLAST_EDITOR", "swappy -f")
--- hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
--- hl.env("XDG_MENU_PREFIX", "arch-")
-
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
