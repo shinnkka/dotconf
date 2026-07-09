@@ -1,14 +1,13 @@
 require("noctalia.noctalia-colors")
 require("noctalia.bind")
 require("sub.desktop")
-require("plugins.hymission")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
 
 local terminal = "kitty"
 local fileManager = "thunar"
-local run = "uwsm app -- "
+local run = "uwsm-app "
 local mainMod = "SUPER"
 
 -------------------
@@ -18,7 +17,6 @@ local mainMod = "SUPER"
 hl.on("hyprland.start", function()
 	-- hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	hl.exec_cmd("hyprpm reload")
 end)
 
 -----------------------
