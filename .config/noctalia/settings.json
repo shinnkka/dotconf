@@ -4,8 +4,8 @@
         "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
         "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
-        "customLaunchPrefix": "uwsm app --",
-        "customLaunchPrefixEnabled": true,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
         "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
@@ -185,7 +185,8 @@
                         "微信",
                         "键盘 - 英语（美国）",
                         "Telegram Desktop",
-                        "KDE Connect"
+                        "KDE Connect",
+                        "steam"
                     ]
                 },
                 {
@@ -222,13 +223,6 @@
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
-                },
-                {
-                    "applyToAllMonitors": false,
-                    "displayMode": "onhover",
-                    "iconColor": "none",
-                    "id": "Brightness",
                     "textColor": "none"
                 },
                 {
@@ -293,7 +287,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "brightness-card"
             },
             {
@@ -685,6 +679,10 @@
             {
                 "enabled": true,
                 "id": "steam"
+            },
+            {
+                "enabled": true,
+                "id": "fuzzel"
             }
         ],
         "enableUserTheming": true

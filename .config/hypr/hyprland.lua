@@ -167,6 +167,7 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(run .. "fuzzel"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run .. terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run .. fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(run .. "firefox"))

@@ -5,7 +5,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(run .. "qs -c noctalia-shell --no-duplicate")
 end)
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
+--hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
 
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(ipc .. " controlCenter toggle"))
 
