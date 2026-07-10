@@ -7,7 +7,7 @@ require("sub.desktop")
 
 local terminal = "kitty"
 local fileManager = "thunar"
-local run = "uwsm-app "
+local run = "uwsm-app -- "
 local mainMod = "SUPER"
 
 -------------------

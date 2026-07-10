@@ -1,6 +1,6 @@
 local ipc = "qs -c noctalia-shell ipc call"
 local mainMod = "SUPER"
-local run = "uwsm-app "
+local run = "uwsm-app -- "
 hl.on("hyprland.start", function()
 	hl.exec_cmd(run .. "qs -c noctalia-shell --no-duplicate")
 end)
