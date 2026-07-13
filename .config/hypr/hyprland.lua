@@ -9,7 +9,7 @@ local terminal = "kitty"
 local fileManager = "thunar"
 local run = "uwsm-app -- "
 local mainMod = "SUPER"
-
+local script = "~/.config/hypr/scripts/"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -166,6 +166,8 @@ hl.device({
 ---------------------
 
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(run .. "fuzzel"))
+hl.bind("ALT + V", hl.dsp.exec_cmd(run .. script .. "clipboard.sh"))
+
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run .. terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run .. fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(run .. "firefox"))

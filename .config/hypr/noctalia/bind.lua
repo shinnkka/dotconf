@@ -17,7 +17,7 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. " notifications toggleHistory"
 
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(ipc .. " notifications clear"))
 
-hl.bind("ALT + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+--hl.bind("ALT + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"), { locked = true, repeating = true })
 

@@ -90,16 +90,6 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "rocket",
-                    "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": false
-                },
-                {
                     "compactMode": true,
                     "diskPath": "/",
                     "iconColor": "none",
