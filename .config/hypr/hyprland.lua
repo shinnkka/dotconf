@@ -1,6 +1,6 @@
 require("noctalia.bind")
 require("sub.laptop")
-require("plugins.hymission")
+-- require("plugins.hymission")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -9,7 +9,7 @@ local terminal = "kitty"
 local fileManager = "thunar"
 local run = "uwsm app -- "
 local mainMod = "SUPER"
-
+-- local script = "~/.config/hypr/scripts/"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -17,7 +17,8 @@ local mainMod = "SUPER"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	hl.exec_cmd("hyprpm reload")
+	-- hl.exec_cmd("hyprpm reload")
+	-- hl.exec_cmd(run .. "wl-paste --watch cliphist store")
 end)
 
 -----------------------
@@ -31,6 +32,7 @@ hl.config({
 		border_size = 2,
 
 		layout = "dwindle",
+		--layout = "scrolling",
 	},
 
 	decoration = {
@@ -165,6 +167,8 @@ hl.device({
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
+-- hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(run .. "fuzzel"))
+-- hl.bind("ALT + V", hl.dsp.exec_cmd(run .. script .. "clipboard.sh"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run .. terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run .. fileManager))
@@ -312,7 +316,7 @@ hl.window_rule({
 	name = "no_opacity",
 
 	match = {
-		class = "firefox",
+		class = "firefox|chromium",
 	},
 
 	opacity = "1 override 1",
@@ -332,4 +336,4 @@ hl.window_rule({
 -------------------
 
 -- For Noctalia Color templates
-require("noctalia")
+require("noctalia").apply_theme()
