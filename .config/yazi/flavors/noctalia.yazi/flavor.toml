@@ -41,7 +41,7 @@ perm_type = { fg = "#bb9af7" }
 perm_write = { fg = "#9ece6a" }
 perm_exec = { fg = "#f7768e" }
 perm_read = { fg = "#446e17" }
-perm_sep = { fg = "#003dbe" }
+perm_sep = { fg = "#003dbf" }
 
 # : ]]]
 
