@@ -6,7 +6,7 @@ hl.monitor({
 	output = "eDP-1",
 	mode = "maxwidth",
 	position = "auto",
-	scale = 1.8,
+	scale = 2,
 	bitdepth = 10,
 	vrr = 3,
 })
