@@ -9,4 +9,5 @@ hl.monitor({
 	scale = 2,
 	bitdepth = 10,
 	vrr = 3,
+	cm = "hdr",
 })

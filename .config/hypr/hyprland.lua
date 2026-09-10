@@ -1,4 +1,3 @@
-require("noctalia.noctalia-colors")
 require("noctalia.bind")
 require("sub.desktop")
 ---------------------
@@ -9,7 +8,6 @@ local terminal = "kitty"
 local fileManager = "thunar"
 local run = "uwsm-app -- "
 local mainMod = "SUPER"
-local script = "~/.config/hypr/scripts/"
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -17,6 +15,7 @@ local script = "~/.config/hypr/scripts/"
 hl.on("hyprland.start", function()
 	-- hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
+	hl.exec_cmd(run .. "qbittorrent")
 end)
 
 -----------------------
@@ -165,9 +164,6 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(run .. "fuzzel"))
-hl.bind("ALT + V", hl.dsp.exec_cmd(run .. script .. "clipboard.sh"))
-
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(run .. terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(run .. fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(run .. "firefox"))
@@ -179,8 +175,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 
---hl.bind(mainMod .. " + L",
---    hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 hl.bind(mainMod .. " + Z", hl.dsp.window.fullscreen({ mode = 0 }))
 
@@ -322,7 +317,13 @@ hl.window_rule({
 
 	opacity = "1 override 1",
 })
-
+hl.window_rule({
+	name = "qbittorrent",
+	match = {
+		class = "org.qbittorrent.qBittorrent",
+	},
+	workspace = "special:magic",
+})
 -- hl.window_rule({
 -- 	name = "no_screen_share",
 --
@@ -335,3 +336,6 @@ hl.window_rule({
 -------------------
 ---- LAYERRULE ----
 -------------------
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
