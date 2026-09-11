@@ -17,8 +17,6 @@ local mainMod = "SUPER"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("xrdb -merge ~/.Xresources")
-	-- hl.exec_cmd("hyprpm reload")
-	-- hl.exec_cmd(run .. "wl-paste --watch cliphist store")
 end)
 
 -----------------------
@@ -322,6 +320,15 @@ hl.window_rule({
 	opacity = "1 override 1",
 })
 
+hl.window_rule({
+	name = "fullscreen_opacity",
+
+	match = {
+		class = "kitty",
+	},
+
+	opacity = "0.8 override 1 0.8",
+})
 -- hl.window_rule({
 -- 	name = "no_screen_share",
 --
