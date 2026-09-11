@@ -327,7 +327,7 @@ hl.window_rule({
 		class = "kitty",
 	},
 
-	opacity = "0.8 override 1 0.8",
+	opacity = "1 1 0.9",
 })
 -- hl.window_rule({
 -- 	name = "no_screen_share",
