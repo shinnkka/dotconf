@@ -297,20 +297,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "fix-wechat-send",
-
-	match = {
-		class = "wechat",
-		title = "^微信发送给$",
-	},
-
-	no_blur = true,
-	no_shadow = true,
-	border_size = 0,
-	no_screen_share = true,
-})
-
-hl.window_rule({
 	name = "no_opacity",
 
 	match = {
@@ -329,18 +315,6 @@ hl.window_rule({
 
 	opacity = "1 1 0.9",
 })
--- hl.window_rule({
--- 	name = "no_screen_share",
---
--- 	match = {
--- 		class = "^(org.telegram.desktop|QQ)$",
--- 	},
--- 	no_screen_share = true,
--- })
-
--------------------
----- LAYERRULE ----
--------------------
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
